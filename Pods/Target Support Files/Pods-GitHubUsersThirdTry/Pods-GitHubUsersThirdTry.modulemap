@@ -1,0 +1,6 @@
+framework module Pods_GitHubUsersThirdTry {
+  umbrella header "Pods-GitHubUsersThirdTry-umbrella.h"
+
+  export *
+  module * { export * }
+}
