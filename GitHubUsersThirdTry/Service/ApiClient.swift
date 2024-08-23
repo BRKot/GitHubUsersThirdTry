@@ -4,7 +4,7 @@ class APIClient<Response:Codable>{
     
     func createRequest(url: String, completion: @escaping(Response?, String?) -> Void){
         
-        let token = "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"
+        let token = "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"
         
         guard let url = URL(string: url) else {
             print("Неверный URL")
