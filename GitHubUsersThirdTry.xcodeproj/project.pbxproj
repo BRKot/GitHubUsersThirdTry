@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B718435B2C785BA00061E3D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B718435A2C785BA00061E3D0 /* User.swift */; };
 		B718435D2C785BC90061E3D0 /* FullUserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B718435C2C785BC90061E3D0 /* FullUserInformation.swift */; };
+		B71843632C7C65300061E3D0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71843622C7C65300061E3D0 /* StringExtension.swift */; };
 		B7E47D702C779D7E0036280F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E47D6F2C779D7E0036280F /* AppDelegate.swift */; };
 		B7E47D722C779D7E0036280F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E47D712C779D7E0036280F /* SceneDelegate.swift */; };
 		B7E47D742C779D7E0036280F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E47D732C779D7E0036280F /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 		ADCAFABCFC15BE220390B08D /* Pods-GitHubUsersThirdTry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUsersThirdTry.debug.xcconfig"; path = "Target Support Files/Pods-GitHubUsersThirdTry/Pods-GitHubUsersThirdTry.debug.xcconfig"; sourceTree = "<group>"; };
 		B718435A2C785BA00061E3D0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B718435C2C785BC90061E3D0 /* FullUserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullUserInformation.swift; sourceTree = "<group>"; };
+		B71843622C7C65300061E3D0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B7E47D6C2C779D7E0036280F /* GitHubUsersThirdTry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUsersThirdTry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7E47D6F2C779D7E0036280F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7E47D712C779D7E0036280F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
+		B71843612C7C65080061E3D0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B71843622C7C65300061E3D0 /* StringExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		B7E47D632C779D7E0036280F = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 		B7E47D6E2C779D7E0036280F /* GitHubUsersThirdTry */ = {
 			isa = PBXGroup;
 			children = (
+				B71843612C7C65080061E3D0 /* Extension */,
 				B71843592C785B820061E3D0 /* Structs */,
 				B7E47D952C77A0F00036280F /* Service */,
 				B7E47D902C779F120036280F /* UserCard */,
@@ -289,6 +300,7 @@
 			files = (
 				B718435B2C785BA00061E3D0 /* User.swift in Sources */,
 				B7E47D972C77A0FC0036280F /* ApiClient.swift in Sources */,
+				B71843632C7C65300061E3D0 /* StringExtension.swift in Sources */,
 				B7E47D742C779D7E0036280F /* ViewController.swift in Sources */,
 				B7E47D702C779D7E0036280F /* AppDelegate.swift in Sources */,
 				B7E47D8A2C779EA30036280F /* Coordinator.swift in Sources */,

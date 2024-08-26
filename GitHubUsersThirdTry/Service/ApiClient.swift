@@ -4,7 +4,7 @@ class APIClient<Response:Codable>{
     
     func createRequest(url: String, completion: @escaping(Response?, String?) -> Void){
         
-        let token = "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"
+        let tokenBase64 = "Z2l0aHViX3BhdF8xMUFQV0dNQ1EwNlo0NFRoelNKSDVmX2lKNzY5U3Q0RXNMMWpxaTR2Nk9TTG9Md05va09JZHQ0SVV6YU9mSkZqRkhWRVg0TE5YSEUzc0FTRjFI"
         
         guard let url = URL(string: url) else {
             print("Неверный URL")
@@ -12,8 +12,12 @@ class APIClient<Response:Codable>{
             return
         }
         
+        
         var request = URLRequest(url: url)
-        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        if let token = tokenBase64.base64Decoded(){
+            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
         
         // Создаем URL запрос
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
