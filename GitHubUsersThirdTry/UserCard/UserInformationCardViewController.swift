@@ -7,7 +7,7 @@ protocol UserInformationCardView{
     func refreshCollectionView()->Void
     func configureCell(indexCell: Int, userInformation: User)->Void
     func configureAvatars(indexCell: Int, userInformation: User)->Void
-    func configureUserAvatar(userAvatar: Data)
+    func configureUserAvatar(user: User)
     func setupCollectionView()
     func configureTitle(title: String)->Void
 }
@@ -42,12 +42,25 @@ extension UserInformationCardViewController: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DeatailUserCell.identifier, for: indexPath) as? DeatailUserCell else {
                 return UICollectionViewCell()
             }
+            
             return cell
         }else{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserCell.identifier, for: indexPath) as? UserCell else {
                 return UICollectionViewCell()
             }
-            presenter?.configure(cell: cell, indexPath: indexPath)
+            
+            guard let user = presenter?.getUserData(row: indexPath.row) else { return cell}
+            
+            cell.loginLabel.text = user.login
+            if let countFolowers = user.folowers, let countRepos = user.public_repos {
+                cell.countSubscribersLabel.text = "\(countFolowers) подписчиков"
+                cell.countRepositoriesLabel.text = "\(countRepos) репозиториев"
+            }
+            if let imageData = user.imageData{
+                cell.imageView.image = UIImage(data: imageData)
+            }
+            
+            cell.tag = user.id
             return cell
         }
     }
@@ -139,17 +152,23 @@ extension UserInformationCardViewController: UserInformationCardView{
     }
     
     func configureUserCard(userInfo: User) {
-        guard let cell = collectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as? DeatailUserCell else { return }
-        (cell as DeatailUserCell).configureAdditionalInformation(user: userInfo)
+        guard let cell = collectionView.visibleCells.first(where: {$0.reuseIdentifier == DeatailUserCell.identifier}) as? DeatailUserCell else { return }
+        cell.configureAdditionalInformation(user: userInfo)
+        
+        if let avatar = userInfo.imageData{
+            cell.imageView.image = UIImage(data: avatar)
+        }
     }
     
-    func configureUserAvatar(userAvatar: Data) {
-        guard let cell = collectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as? DeatailUserCell else { return }
-        cell.imageView.image = UIImage(data: userAvatar)
+    func configureUserAvatar(user: User) {
+        guard let cell = collectionView.visibleCells.first(where: {$0.reuseIdentifier == UserCell.identifier && $0.tag == user.id }) as? UserCell else { return }
+        if let avatar = user.imageData {
+            cell.imageView.image = UIImage(data: avatar)
+        }
     }
     
     func configureCell(indexCell: Int, userInformation: User) {
-        guard let cell = collectionView.cellForItem(at: IndexPath(row: indexCell, section: 1)) as? UserCell else {return}
+        guard let cell = collectionView.visibleCells.first(where: {$0.reuseIdentifier == UserCell.identifier && $0.tag == userInformation.id }) as? UserCell else { return }
         if let countFolowers = userInformation.folowers, let countRepos = userInformation.public_repos {
             cell.countSubscribersLabel.text = "\(countFolowers) подписчиков"
             cell.countRepositoriesLabel.text = "\(countRepos) репозиториев"
@@ -157,7 +176,7 @@ extension UserInformationCardViewController: UserInformationCardView{
     }
     
     func configureAvatars(indexCell: Int, userInformation: User) {
-        guard let cell = collectionView.cellForItem(at: IndexPath(row: indexCell, section: 1)) as? UserCell else { return }
+        guard let cell = collectionView.visibleCells.first(where: {$0.reuseIdentifier == UserCell.identifier && $0.tag == userInformation.id }) as? UserCell else { return }
         if let imageData = userInformation.imageData {
             cell.imageView.image = UIImage(data: imageData)
         }

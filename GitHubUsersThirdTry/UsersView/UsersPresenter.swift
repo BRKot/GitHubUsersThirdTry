@@ -88,17 +88,9 @@ class UsersPresenter{
         }
     }
     
-    func configure(cell: UserCell, indexPath: IndexPath){
-        let user = users[indexPath.row]
-        cell.loginLabel.text = user.login
-        if let countFolowers = user.folowers, let countRepos = user.public_repos {
-            cell.countSubscribersLabel.text = "\(countFolowers) подписчиков"
-            cell.countRepositoriesLabel.text = "\(countRepos) репозиториев"
-        }
-        if let imageData = user.imageData{
-            cell.imageView.image = UIImage(data: imageData)
-        }
-        
+    func getUserData(row: Int) -> User?{
+        guard users.count > row else { return nil}
+        return users[row]
     }
     
     func selectedCell(index: Int){

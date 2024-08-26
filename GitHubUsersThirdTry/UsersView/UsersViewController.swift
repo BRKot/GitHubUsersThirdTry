@@ -56,7 +56,18 @@ extension UsersViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserCell.identifier, for: indexPath) as? UserCell else {
             return UICollectionViewCell()
         }
-        presenter?.configure(cell: cell, indexPath: indexPath)
+        guard let user = presenter?.getUserData(row: indexPath.row) else { return cell}
+        
+        cell.loginLabel.text = user.login
+        if let countFolowers = user.folowers, let countRepos = user.public_repos {
+            cell.countSubscribersLabel.text = "\(countFolowers) подписчиков"
+            cell.countRepositoriesLabel.text = "\(countRepos) репозиториев"
+        }
+        if let imageData = user.imageData{
+            cell.imageView.image = UIImage(data: imageData)
+        }
+        
+        cell.tag = user.id
         return cell
     }
     
@@ -78,7 +89,7 @@ extension UsersViewController: UICollectionViewDelegateFlowLayout {
 
 extension UsersViewController: UsersView{
     func configureCell(indexCell: Int, userInformation: User) {
-        guard let cell = collectionView.cellForItem(at: IndexPath(row: indexCell, section: 0)) as? UserCell else {return}
+        guard let cell = collectionView.visibleCells.first(where: {$0.tag == userInformation.id}) as? UserCell else { return }
         if let countFolowers = userInformation.folowers, let countRepos = userInformation.public_repos {
             cell.countSubscribersLabel.text = "\(countFolowers) подписчиков"
             cell.countRepositoriesLabel.text = "\(countRepos) репозиториев"
@@ -86,7 +97,7 @@ extension UsersViewController: UsersView{
     }
     
     func configureAvatars(indexCell: Int, userInformation: User) {
-        guard let cell = collectionView.cellForItem(at: IndexPath(row: indexCell, section: 0)) as? UserCell else {return}
+        guard let cell = collectionView.visibleCells.first(where: {$0.tag == userInformation.id}) as? UserCell else { return }
         if let imageData = userInformation.imageData {
             cell.imageView.image = UIImage(data: imageData)
             cell.imageView.layer.cornerRadius = 12

@@ -7,32 +7,127 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DC34A899-424E-4A8B-BB22-92E11ACF8C78"
+            uuid = "6F862FC2-4AAC-4DDE-85DA-5972E022E40F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GitHubUsersThirdTry/Service/ApiClient.swift"
+            filePath = "GitHubUsersThirdTry/UserCard/UserInformationCardViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "createRequest(url:completion:)"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "configureUserCard(userInfo:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6F862FC2-4AAC-4DDE-85DA-5972E022E40F - ec07ac617ed00433"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GitHubUsersThirdTry.UserInformationCardViewController.configureUserCard(userInfo: GitHubUsersThirdTry.User) -&gt; ()"
+                  moduleName = "GitHubUsersThirdTry"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/GitHubUsersThirdTry/GitHubUsersThirdTry/UserCard/UserInformationCardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
+                  offsetFromSymbolStart = "440">
+               </Location>
+               <Location
+                  uuid = "6F862FC2-4AAC-4DDE-85DA-5972E022E40F - ec07ac617ed00433"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GitHubUsersThirdTry.UserInformationCardViewController.configureUserCard(userInfo: GitHubUsersThirdTry.User) -&gt; ()"
+                  moduleName = "GitHubUsersThirdTry"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/GitHubUsersThirdTry/GitHubUsersThirdTry/UserCard/UserInformationCardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
+                  offsetFromSymbolStart = "600">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2AE119CE-03D3-43B2-9970-96FFF657509F"
+            uuid = "F2FED162-9A04-49D6-901B-1E673613ECEF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GitHubUsersThirdTry/Service/ApiClient.swift"
+            filePath = "GitHubUsersThirdTry/UserCard/UserInformationCardViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "createRequest(url:completion:)"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "configureUserCard(userInfo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F2FED162-9A04-49D6-901B-1E673613ECEF - ec07ac617ed00452"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GitHubUsersThirdTry.UserInformationCardViewController.configureUserCard(userInfo: GitHubUsersThirdTry.User) -&gt; ()"
+                  moduleName = "GitHubUsersThirdTry"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/GitHubUsersThirdTry/GitHubUsersThirdTry/UserCard/UserInformationCardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "155"
+                  endingLineNumber = "155"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "F2FED162-9A04-49D6-901B-1E673613ECEF - 1448cb97bf86ad14"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UICollectionViewCell) -&gt; Swift.Bool in GitHubUsersThirdTry.UserInformationCardViewController.configureUserCard(userInfo: GitHubUsersThirdTry.User) -&gt; ()"
+                  moduleName = "GitHubUsersThirdTry"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/GitHubUsersThirdTry/GitHubUsersThirdTry/UserCard/UserInformationCardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "155"
+                  endingLineNumber = "155"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "F2FED162-9A04-49D6-901B-1E673613ECEF - ec07ac617ed00452"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GitHubUsersThirdTry.UserInformationCardViewController.configureUserCard(userInfo: GitHubUsersThirdTry.User) -&gt; ()"
+                  moduleName = "GitHubUsersThirdTry"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/GitHubUsersThirdTry/GitHubUsersThirdTry/UserCard/UserInformationCardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "155"
+                  endingLineNumber = "155"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "30803472-9BE8-4519-8661-AFD3CB4ABCC7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GitHubUsersThirdTry/UserCard/UserInformationCardPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "loadUserAvatar()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
